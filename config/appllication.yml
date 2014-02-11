@@ -1,8 +1,8 @@
 defaults: &defaults
   app_url: http://localhost:3000
   github:
-    client_id: 50d1cad7d4133c856cf9
-    secret: 85fe02c5e7652ee1d05248db764ae569733bc39a
+    client_id: '50d1cad7d4133c856cf9'
+    secret: '85fe02c5e7652ee1d05248db764ae569733bc39a'
 
 development: &development
   <<: *defaults
