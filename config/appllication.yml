@@ -1,0 +1,23 @@
+defaults: &defaults
+  app_url: http://localhost:3000
+  github:
+    client_id: 50d1cad7d4133c856cf9
+    secret: 85fe02c5e7652ee1d05248db764ae569733bc39a
+
+development: &development
+  <<: *defaults
+
+test:
+  <<: *development
+
+qa:
+  <<: *defaults
+
+s1:
+  <<: *defaults
+  app_url:
+
+
+production:
+  <<: *defaults
+  app_url:
