@@ -10,6 +10,8 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'omniauth-github'
 
+gem 'haml-rails'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
