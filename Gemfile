@@ -3,8 +3,8 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
 
-
 gem 'pg' # Postgres SQL DB
+gem 'protected_attributes'
 gem 'jbuilder', '~> 1.2'
 gem 'haml-rails'
 

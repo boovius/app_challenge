@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
 
+  has_many   :apps
+
   def self.create_with_omniauth(auth)
 
     puts '*' * 30
