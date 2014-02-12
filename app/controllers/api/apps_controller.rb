@@ -1,4 +1,4 @@
-class AppsController < ApplicationController
+class Api::AppsController < ApplicationController
   def current
     @apps = App.where(current: true)
   end

@@ -20,6 +20,6 @@ class App < ActiveRecord::Base
   private
 
   def set_current
-
+    self.current = true if user.apps.pluck(:current).exclude?(true)
   end
 end
