@@ -3,12 +3,10 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
 
-group :api do
-  # Postgres SQL DB
-  gem 'pg'
-  gem 'jbuilder', '~> 1.2'
-  gem 'haml-rails'
-end
+
+gem 'pg' # Postgres SQL DB
+gem 'jbuilder', '~> 1.2'
+gem 'haml-rails'
 
 gem 'omniauth-github'
 
