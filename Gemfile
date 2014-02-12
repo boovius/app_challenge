@@ -12,6 +12,7 @@ gem 'omniauth-github'
 
 gem 'haml-rails'
 
+gem 'pry'
 gem 'awesome_print'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
