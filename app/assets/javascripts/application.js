@@ -13,3 +13,4 @@
 //= require ../../../vendor/assets/javascripts
 //= require initialize
 //= require_tree .
+
