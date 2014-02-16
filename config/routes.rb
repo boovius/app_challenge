@@ -5,7 +5,8 @@ AppChallenge::Application.routes.draw do
     end
   end
 
-  root to: 'users#new'
+  root to: 'ng_view#index'
+  get '/new' => 'users#new', :as => :signin
   get '/auth/:provider/callback' => 'sessions#create'
   get '/signout' => 'sessions#destroy', :as => :signout
 
