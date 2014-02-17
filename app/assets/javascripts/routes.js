@@ -4,7 +4,13 @@ AppChallenge.config(['$routeProvider', '$locationProvider', function($routeProvi
 
   $routeProvider
   .when('/', {
-    templateUrl: ('assets/home/home.html')
+    templateUrl: ('assets/home/home.html'),
+    controller: 'HomeController',
+    resolve: {
+      currentApps: ['AppService', function(AppService) {
+
+        return AppService.current.query()
+      }]
     }
-  )
+  })
 }])

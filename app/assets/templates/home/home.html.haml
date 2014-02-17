@@ -1,4 +1,6 @@
-#home.container(ng-controller="TestController")
+#home.container
   %h1 Hello World
-  %input(type="text" ng-model="stuff")
-  .stuff {{stuff}}
+  %ul
+    %li(ng-repeat="app in currentApps")
+      {{app.title}}
+
