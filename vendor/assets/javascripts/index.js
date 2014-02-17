@@ -1,4 +1,6 @@
 //= require angular
-//= angular-resource
-//= smart-table
-//= ui-bootstrap-tpls-0.10.0
+//= require jquery
+//= require angular-route
+//= require angular-resource
+//= require smart-table
+//= require ui-bootstrap-tpls-0.10.0

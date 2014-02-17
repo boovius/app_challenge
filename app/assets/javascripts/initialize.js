@@ -4,9 +4,13 @@
 //= require_tree ./services
 
 AppChallenge = angular.module('AppChallenge', [
-  'ui.bootstrap',
-  'scroll',
+  'ngRoute',
   'ngResource',
-  'smartTable.table'
+  'smartTable.table',
+  'ui.bootstrap'
 ])
+
+.config(['$httpProvider', '$routeProvider', '$locationProvider', function($httpProvider, $routeProvider, $locationProvider) {
+
+}])
 

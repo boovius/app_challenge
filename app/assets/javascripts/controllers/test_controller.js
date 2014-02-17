@@ -1,5 +1,5 @@
 AppChallenge.controller('TestController', ['$scope', function($scope) {
-  $scope.thing = 5
+  $scope.stuff = "hello"
 
-  console.log($scope.thing)
+  console.log($scope.stuff)
 }])

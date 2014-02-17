@@ -1,1 +1,5 @@
-%div(ng-view)
+.app(ng-app="AppChallenge")
+  .top(ng-controller="TestController")
+    %input(type="text" ng-model="stuff")
+    .stuff {{stuff}}
+    %div(ng-view)
