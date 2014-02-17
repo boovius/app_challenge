@@ -1,6 +1,6 @@
 #home.container
   %h1 Hello World
-  %ul
-    %li(ng-repeat="app in currentApps")
-      {{app.title}}
+  .row-fluid
+    .span-12
+      %smart-table.table.table-striped(config="dataTableConfig" columns="homeTableColumns" rows="currentApps")
 
