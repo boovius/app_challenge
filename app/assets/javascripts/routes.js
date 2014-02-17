@@ -4,7 +4,7 @@ AppChallenge.config(['$routeProvider', '$locationProvider', function($routeProvi
 
   $routeProvider
   .when('/', {
-    templateUrl: ('assets/templates/home/home.html')
+    templateUrl: ('assets/home/home.html')
     }
   )
 }])
