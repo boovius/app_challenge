@@ -1,11 +1,15 @@
 AppChallenge.controller('HomeController', ['$scope', 'currentApps', function($scope, currentApps) {
   $scope.stuff = "AHAHAHA"
   $scope.currentApps = currentApps
-  $scope. dataTableConfig
+
+  $scope.dataTableConfig = {
+    itemsByPage: 50,
+    isPaginationEnabled: false
+  }
 
   $scope.homeTableColumns = [
-        {label: 'Title', map: 'title'},
-        {label: 'Developers', map:'developer'}
+        {label: 'App', map: 'title'},
+        {label: 'Developer', map:'developer'}
   ]
 
   console.log($scope)
