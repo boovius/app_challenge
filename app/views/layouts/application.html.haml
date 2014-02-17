@@ -4,8 +4,10 @@
       AppChallenge
     = csrf_meta_tags
     = stylesheet_link_tag "application"
-  %body
+  %body(ng-app="AppChallenge")
+    #nav
     = yield
+    #footer
     = javascript_include_tag "application"
 
 
