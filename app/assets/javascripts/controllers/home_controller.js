@@ -1,6 +1,4 @@
 AppChallenge.controller('HomeController', ['$scope', 'currentApps', function($scope, currentApps) {
-  $scope.stuff = "AHAHAHA"
-  $scope.currentApps = currentApps
 
   $scope.dataTableConfig = {
     itemsByPage: 50,
@@ -12,6 +10,5 @@ AppChallenge.controller('HomeController', ['$scope', 'currentApps', function($sc
         {label: 'Developer', map:'developer'}
   ]
 
-  console.log($scope)
-  console.log(currentApps)
+  $scope.homeTableRowData = currentApps
 }])
