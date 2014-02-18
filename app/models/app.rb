@@ -18,7 +18,8 @@ class App < ActiveRecord::Base
   before_save :set_current
 
   def percentage_complete
-    features.length / features_completed.length
+    return 0 if features_completed.length == 0
+    features_completed.length.to_f / features.length
   end
 
   def features_completed
@@ -28,6 +29,7 @@ class App < ActiveRecord::Base
         features_completed << feature
       end
     end
+    features_completed
   end
 
   private

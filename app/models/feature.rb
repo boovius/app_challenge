@@ -14,6 +14,9 @@ class Feature < ActiveRecord::Base
   private
 
   def set_initial_done_state
-    self.done = false if self.done == nil
+    self.done = false unless self.done == true
+
+    # to prevent DB rollback
+    true
   end
 end
