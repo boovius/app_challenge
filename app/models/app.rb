@@ -17,6 +17,19 @@ class App < ActiveRecord::Base
 
   before_save :set_current
 
+  def percentage_complete
+    features.length / features_completed.length
+  end
+
+  def features_completed
+    features_completed = []
+    features.each do |feature|
+      if feature.done
+        features_completed << feature
+      end
+    end
+  end
+
   private
 
   def set_current
