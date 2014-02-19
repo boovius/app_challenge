@@ -1,4 +1,4 @@
-AppChallenge.controller('HomeController', ['$scope', 'currentApps', '$filter', function($scope, currentApps, $filter) {
+AppChallenge.controller('HomeController', ['$scope', 'currentApps', function($scope, currentApps) {
 
   $scope.dataTableConfig = {
     itemsByPage: 50,
@@ -8,7 +8,7 @@ AppChallenge.controller('HomeController', ['$scope', 'currentApps', '$filter', f
   $scope.homeTableColumns = [
         {label: 'App', map: 'title'},
         {label: 'Developer', map:'developer'},
-        {label: 'Percent Completed', map:'percentageComplete'}
+        {label: 'Percent Completed', map:'percentageComplete', cellTemplateUrl: ('assets/cell_templates/percentage.html')}
   ]
 
   $scope.homeTableRowData = currentApps

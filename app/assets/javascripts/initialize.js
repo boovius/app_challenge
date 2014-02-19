@@ -2,6 +2,7 @@
 //= require_tree ./directives
 //= require_tree ./controllers
 //= require_tree ./services
+//= require_tree ./filters
 
 AppChallenge = angular.module('AppChallenge', [
   'ngRoute',
