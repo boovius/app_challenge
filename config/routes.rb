@@ -2,6 +2,7 @@ AppChallenge::Application.routes.draw do
   namespace :api, defaults: {format: :json} do
     namespace :apps do
       get "/current", action: 'current'
+      get "/:id",     action: 'show'
     end
   end
 

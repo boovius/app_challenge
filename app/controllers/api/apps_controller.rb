@@ -3,6 +3,10 @@ class Api::AppsController < ApplicationController
     @apps = App.where(current: true)
   end
 
+  def show
+    @app = App.find(params[:id])
+  end
+
   def create
     app = App.create(app_params)
   end
