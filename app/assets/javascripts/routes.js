@@ -13,7 +13,7 @@ AppChallenge.config(['$routeProvider', '$locationProvider', function($routeProvi
     }
   })
   .when('/apps/:id', {
-    templateUrl: ('assets/apps/show.html'),
+    templateUrl: ('../assets/apps/show.html'),
     controller: "AppShowController",
     resolve: {
       app: ['AppService', '$route', function(AppService, $route){
