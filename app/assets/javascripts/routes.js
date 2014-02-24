@@ -15,10 +15,9 @@ AppChallenge.config(['$routeProvider', '$locationProvider', function($routeProvi
   .when('/apps/:id', {
     templateUrl: ('assets/apps/show.html'),
     controller: "AppShowController",
-    controllerAs: "boooo",
     resolve: {
       app: ['AppService', '$route', function(AppService, $route){
-        return AppService.show.get({id: $route.current.params.id})
+        return AppService.show.get({id: $route.current.params.id});
       }]
     }
   })
