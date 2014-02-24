@@ -5,7 +5,9 @@
     = csrf_meta_tags
     = stylesheet_link_tag "application"
   %body(ng-app="AppChallenge")
-    #nav.nav.navbar.navbar-inverse.navbar-fixed-top
+    %nav.nav.navbar.navbar-inverse.navbar-fixed-top
+      %a.navbar-brand(href="/")
+        Goon Squad App Challenge
       %ul.nav.navbar-nav.navbar-right
         %li.dropdown
           %a.dropdown-toggle(href="#" data-toggle="dropdown")
@@ -15,7 +17,7 @@
               %a(href="#")Profile
             %li.divider
             %li
-              %a(href="#")Create App
+              %a(href="/apps/new")Create App
     = yield
     #footer
     = javascript_include_tag "application"
