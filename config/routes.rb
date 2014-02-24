@@ -10,8 +10,8 @@ AppChallenge::Application.routes.draw do
   get '/auth/:provider/callback' => 'sessions#create'
   get '/signout' => 'sessions#destroy', :as => :signout
 
-  # Passthrough to frontend
-  match '*path' => 'ng_view#index', via: [:get]
-
   root to: 'ng_view#index'
+
+  # Passthrough to frontend
+  match '*path' => 'ng_view#index', via: [:get, :post]
 end
