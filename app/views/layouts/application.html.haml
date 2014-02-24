@@ -5,7 +5,17 @@
     = csrf_meta_tags
     = stylesheet_link_tag "application"
   %body(ng-app="AppChallenge")
-    #nav
+    #nav.nav.navbar.navbar-inverse.navbar-fixed-top
+      %ul.nav.navbar-nav.navbar-right
+        %li.dropdown
+          %a.dropdown-toggle(href="#" data-toggle="dropdown")
+            #{current_user.name}'s portal
+          %ul.dropdown-menu
+            %li
+              %a(href="#")Profile
+            %li.divider
+            %li
+              %a(href="#")Create App
     = yield
     #footer
     = javascript_include_tag "application"
