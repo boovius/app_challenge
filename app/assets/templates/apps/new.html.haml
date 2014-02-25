@@ -4,19 +4,19 @@
     .control-group
       .control-label.text-left(for="title") Title
       .controls
-        %input(type="text" name="title" required)
+        %input(type="text" name="title" ng-model="app.title" required)
       .control-label.text-left(for="summary") Summary
       .controls
-        %textarea(name="summary" maxlength="240" cols="20")
+        %textarea(name="summary" ng-model="app.summary" maxlength="240" cols="20")
       .control-label.text-left(for="url") Production Link
       .controls
-        %input(type="url" name="url" required)
+        %input(type="url" name="url" ng-model="app.url")
       .control-label.text-left(for="repo") Repository
       .controls
-        %input(type="url" name="repo")
+        %input(type="url" name="repo" ng-model="app.repo" required)
       .control-label.text-left(for="stories") Pivotal/Trello
       .controls
-        %input(type="url" name="stories")
+        %input(type="url" name="stories" ng-model="app.stories")
       .row.row-divided
         .span12
           %input.btn.btn-submit.pull-right.controls(type="submit" value="Create New App!")

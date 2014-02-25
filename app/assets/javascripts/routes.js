@@ -14,6 +14,7 @@ AppChallenge.config(['$routeProvider', '$locationProvider', function($routeProvi
     }
   })
   .when('/apps/new', {
-    templateUrl: ('../assets/apps/new.html')
+    templateUrl: ('../assets/apps/new.html'),
+    controller: 'AppCreateController'
   })
 }])
