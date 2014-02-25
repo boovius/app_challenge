@@ -1,1 +1,24 @@
-%h1 hello make a new app here!
+#app-new.container
+  %h3 hello make a new app here!
+  %form(name="appForm" ng-model="app" ng-submit="createApp()")
+    .control-group
+      .control-label.text-left(for="title") Title
+      .controls
+        %input(type="text" name="title" required)
+      .control-label.text-left(for="summary") Summary
+      .controls
+        %textarea(name="summary" maxlength="240" cols="20")
+      .control-label.text-left(for="url") Production Link
+      .controls
+        %input(type="url" name="url" required)
+      .control-label.text-left(for="repo") Repository
+      .controls
+        %input(type="url" name="repo")
+      .control-label.text-left(for="stories") Pivotal/Trello
+      .controls
+        %input(type="url" name="stories")
+      .row.row-divided
+        .span12
+          %input.btn.btn-submit.pull-right.controls(type="submit" value="Create New App!")
+
+
