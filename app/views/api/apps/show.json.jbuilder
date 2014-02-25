@@ -1,17 +1,22 @@
-json.app do |json|
-  json.id               @app.id
-  json.title            @app.title
-  json.summary          @app.summary
-  json.links do |json|
-    json.prod_title     "Production-link"
-    json.prod_link      @app.url
-    json.github_title   "GitHub"
-    json.github_link    @app.repo
-    json.stoies_title   "Stories"
-    json.stoies_link    @app.stories
+json.app do |app|
+  app.id               @app.id
+  app.title            @app.title
+  app.summary          @app.summary
+  json.links do |link|
+    link.prod_title     "Production-link"
+    link.prod_link      @app.url
+    link.github_title   "GitHub"
+    link.github_link    @app.repo
+    link.stoies_title   "Stories"
+    link.stoies_link    @app.stories
   end
-  json.user do |json|
-    json.id             @app.user.id
-    json.name           @app.user.name
+  json.user do |user|
+    user.id             @app.user.id
+    user.name           @app.user.name
+  end
+  json.features @app.features do |feature|
+    json.title       feature.title
+    json.points      feature.points
+    json.done        feature.done
   end
 end

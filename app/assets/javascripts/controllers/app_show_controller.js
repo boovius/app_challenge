@@ -10,10 +10,10 @@ AppChallenge.controller('AppShowController', ['$scope', 'app', function($scope, 
 
   $scope.showAppTableColumns = [
         {label: 'Feature', map: 'title'},
-        {label: 'Points', map:'developer'},
-        {label: 'Completed', map:'percentageComplete', cellTemplateUrl: ('assets/cell_templates/percentage.html')}
+        {label: 'Points', map:'points'},
+        {label: 'Completed', map:'done'}
   ]
 
-  // $scope.showAppTableRowData = app.app.features
+  $scope.showAppTableRowData = app.app.features
 
 }])
