@@ -3,6 +3,7 @@ AppChallenge::Application.routes.draw do
     namespace :apps do
       post "/"       , action: 'create'
       get  "/current", action: 'current'
+      get "/:id",     action: 'show'
     end
   end
 
@@ -13,5 +14,4 @@ AppChallenge::Application.routes.draw do
   match '*path' => 'ng_view#index', via: [:get, :post]
 
   root to: 'ng_view#index'
-
 end

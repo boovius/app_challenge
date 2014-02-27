@@ -1,0 +1,11 @@
+#show-app.container
+  .row-fluid
+    .span-12
+      %h1 {{app.title}}
+      %h3 {{app.user.name}}
+      %p {{app.summary}}
+      %ul.links
+        %li(ng-repeat="link in app.links" ng-if="link.url ==''")
+          %a(href="{{link.url}}") {{link.title}}
+      %smart-table.table.table-striped(config="dataTableConfig" columns="showAppTableColumns" rows="showAppTableRowData")
+
