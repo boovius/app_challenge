@@ -1,14 +1,14 @@
 class App < ActiveRecord::Base
 
-  attr_accessible \
-    :title,
-    :summary,
-    :repo,
-    :url,
-    :stories,
-    :current,
-    :user,
-    :user_id
+  # attr_accessible \
+  #   :title,
+  #   :summary,
+  #   :repo,
+  #   :url,
+  #   :stories,
+  #   :current,
+  #   :user,
+  #   :user_id
 
   has_many   :features
   belongs_to :user

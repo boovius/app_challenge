@@ -1,7 +1,8 @@
 AppChallenge::Application.routes.draw do
   namespace :api, defaults: {format: :json} do
     namespace :apps do
-      get "/current", action: 'current'
+      post "/"       , action: 'create'
+      get  "/current", action: 'current'
     end
   end
 

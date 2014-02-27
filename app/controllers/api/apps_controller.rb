@@ -4,12 +4,18 @@ class Api::AppsController < ApplicationController
   end
 
   def create
-    app = App.create(app_params)
+    ap params
+
+    app = App.create!(app_params)
+
+    binding.pry
+
+    render json: app
   end
 
   private
 
   def app_params
-    params.require(:app).permit(:title, :summary, :repo, :url, :stories, :user_id)
+    params.require(:app).permit(:title, :repo)
   end
 end
