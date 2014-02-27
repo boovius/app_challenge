@@ -6,6 +6,7 @@ gem 'rails', '4.0.2'
 gem 'pg' # Postgres SQL DB
 gem 'protected_attributes'
 gem 'jbuilder'
+gem 'gon'
 gem 'haml-rails'
 
 gem 'omniauth-github'

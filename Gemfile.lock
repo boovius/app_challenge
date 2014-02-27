@@ -34,6 +34,9 @@ GEM
     execjs (2.0.2)
     faraday (0.9.0)
       multipart-post (>= 1.2, < 3)
+    gon (5.0.4)
+      actionpack (>= 2.3.0)
+      json
     haml (4.0.4)
       tilt
     haml-rails (0.5.1)
@@ -136,6 +139,7 @@ PLATFORMS
 
 DEPENDENCIES
   awesome_print
+  gon
   haml-rails
   jbuilder
   jquery-rails

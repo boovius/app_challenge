@@ -1,5 +1,7 @@
 AppChallenge.controller('AppCreateController', ['$scope', 'AppService', function($scope, AppService) {
 
+  console.log(gon.user)
+
   $scope.app = {}
 
   $scope.createApp = function(){

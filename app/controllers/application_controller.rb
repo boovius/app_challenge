@@ -3,9 +3,15 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  helper_method :current_user
+  before_filter :expose_user_to_javascript
 
   after_filter :set_csrf_cookie_for_ng
+
+  helper_method :current_user
+
+  def expose_user_to_javascript
+    gon.jbuilder template: 'app/views/api/users/show.json.jbuilder' if current_user
+  end
 
   def set_csrf_cookie_for_ng
     cookies['XSRF-TOKEN'] = form_authenticity_token if protect_against_forgery?
