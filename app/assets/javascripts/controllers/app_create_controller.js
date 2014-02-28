@@ -1,8 +1,9 @@
 AppChallenge.controller('AppCreateController', ['$scope', 'AppService', function($scope, AppService) {
 
-  console.log(gon.user)
+  console.log(gon.currentUser.id)
 
-  $scope.app = {}
+  $scope.app = { userId: gon.currentUser.id }
+  console.log($scope.app)
 
   $scope.createApp = function(){
     console.log($scope.app)

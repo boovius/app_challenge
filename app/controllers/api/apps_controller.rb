@@ -10,9 +10,14 @@ class Api::AppsController < ApplicationController
   def create
     ap params
 
-    app = App.create!(app_params)
+    app = App.new(app_params)
+    app.user_id = params[:userId]
 
-    render json: app
+    if app.save
+      render json: app
+    else
+      render json: {type: 'error', message: 'There was an error!'}, status: :unprocessable_entity
+    end
   end
 
   private
