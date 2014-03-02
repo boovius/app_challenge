@@ -1,24 +1,28 @@
 #app-new.container
-  %h3 hello make a new app here!
-  %form(name="appForm" ng-model="app" ng-submit="createApp()")
-    .control-group
-      .control-label.text-left(for="title") Title
-      .controls
-        %input(type="text" name="title" ng-model="app.title" required)
-      .control-label.text-left(for="summary") Summary
-      .controls
-        %textarea(name="summary" ng-model="app.summary" maxlength="240" cols="20")
-      .control-label.text-left(for="url") Production Link
-      .controls
-        %input(type="url" name="url" ng-model="app.url")
-      .control-label.text-left(for="repo") Repository
-      .controls
-        %input(type="url" name="repo" ng-model="app.repo" required)
-      .control-label.text-left(for="stories") Pivotal/Trello
-      .controls
-        %input(type="url" name="stories" ng-model="app.stories")
-      .row.row-divided
-        .span12
-          %input.btn.btn-submit.pull-right.controls(type="submit" value="Create New App!")
+  %h3 Hey Goons! Looking to make a new App?
+  %h4 Well... you've come to the right place! - fill in your new app's info below!
+  %form.form-horizontal(name="appForm" role="form" ng-model="app" ng-submit="createApp()")
+    .form-group
+      %label.control-label.col-sm-2(for="title") Title
+      .col-sm-10
+        %input.form-control(type="text" name="title" ng-model="app.title" required)
+    .form-group
+      %label.control-label.col-sm-2(for="repo") Repository
+      .col-sm-10
+        %input.form-control(type="url" name="repo" ng-model="app.repo" required)
+    .form-group
+      %label.control-label.col-sm-2(for="summary") Summary
+      .col-sm-10
+        %textarea.form-control(name="summary" ng-model="app.summary" maxlength="240" cols="20")
+    .form-group
+      %label.control-label.col-sm-2(for="url") Production Link
+      .col-sm-10
+        %input.form-control(type="url" name="url" ng-model="app.url")
+    .form-group
+      %label.control-label.col-sm-2(for="stories") Pivotal/Trello
+      .col-sm-10
+        %input.form-control(type="url" name="stories" ng-model="app.stories")
+    .row.row-divided
+      %input.btn.btn-submit.pull-right.controls(type="submit" value="Create New App!")
 
 
