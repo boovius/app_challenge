@@ -1,9 +1,5 @@
 class User < ActiveRecord::Base
 
-  attr_accessible \
-    :id
-    :name
-
   has_many   :apps
 
   validates_uniqueness_of :name

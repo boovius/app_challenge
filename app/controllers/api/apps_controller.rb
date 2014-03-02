@@ -11,18 +11,17 @@ class Api::AppsController < ApplicationController
     ap params
 
     app = App.new(app_params)
-    app.user_id = params[:userId]
 
     if app.save
       render json: app
     else
-      render json: {type: 'error', message: 'There was an error!'}, status: :unprocessable_entity
+      render json: {type: 'error', messages: app.errors.messages}, status: :unprocessable_entity
     end
   end
 
   private
 
   def app_params
-    params.require(:app).permit(:title, :repo, :summary, :url, :stories)
+    params.require(:app).permit(:title, :repo, :summary, :url, :stories, :user_id)
   end
 end

@@ -2,7 +2,7 @@ AppChallenge.controller('AppCreateController', ['$scope', 'AppService', function
 
   console.log(gon.currentUser.id)
 
-  $scope.app = { userId: gon.currentUser.id }
+  $scope.app = { user_id: gon.currentUser.id }
   console.log($scope.app)
 
   $scope.createApp = function(){

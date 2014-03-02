@@ -1,19 +1,10 @@
 class App < ActiveRecord::Base
 
-  attr_accessible \
-    :title,
-    :summary,
-    :repo,
-    :url,
-    :stories,
-    :current,
-    :user,
-    :user_id
-
   has_many   :features
   belongs_to :user
 
-  validates_presence_of :user_id, :title
+  validates_uniqueness_of :title, :repo
+  validates_presence_of :user_id
 
   before_save :set_current
 
@@ -36,5 +27,7 @@ class App < ActiveRecord::Base
 
   def set_current
     self.current = user.apps.pluck(:current).exclude?(true) ? true : false
+
+    true
   end
 end
