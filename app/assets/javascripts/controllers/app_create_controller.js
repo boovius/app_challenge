@@ -1,6 +1,7 @@
 AppChallenge.controller('AppCreateController', ['$scope', 'AppService', function($scope, AppService) {
 
   $scope.app = {
+    title: gon.currentUser.name + "'s new app",
     userId: gon.currentUser.id,
     features: []
   }
