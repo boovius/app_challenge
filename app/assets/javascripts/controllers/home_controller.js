@@ -6,7 +6,7 @@ AppChallenge.controller('HomeController', ['$scope', 'currentApps', function($sc
   }
 
   $scope.homeTableColumns = [
-        {label: 'App', map: 'title'},
+        {label: 'App', map: 'title', cellTemplateUrl: ('assets/cell_templates/link.html')},
         {label: 'Developer', map:'developer'},
         {label: 'Percent Completed', map:'percentageComplete', cellTemplateUrl: ('assets/cell_templates/percentage.html')}
   ]
