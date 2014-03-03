@@ -11,6 +11,7 @@ class Api::AppsController < ApplicationController
     ap params
 
     app = App.new(app_params)
+    app.features.build params[:features]
 
     if app.save
       render json: app
@@ -22,6 +23,6 @@ class Api::AppsController < ApplicationController
   private
 
   def app_params
-    params.require(:app).permit(:title, :repo, :summary, :url, :stories, :user_id)
+    params.require(:app).permit(:title, :repo, :summary, :url, :stories, :user_id, features_attributes: [:id, :title, :points])
   end
 end

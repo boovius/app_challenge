@@ -5,15 +5,8 @@ AppChallenge.controller('AppCreateController', ['$scope', 'AppService', function
     features: []
   }
 
-  console.log(angular.isDefined($scope.app.features))
-  console.log($scope.app.features)
-
   $scope.addNewFeature = function(){
-    var index = $scope.app.features.length > 0 ? $scope.app.features.length : 0
-    var new_feature =  {id: $scope.app.features[index]}
-    console.log(new_feature)
-    $scope.app.features.push(new_feature)
-    console.log($scope.app.features)
+    $scope.app.features.push({})
   }
 
   $scope.deleteFeature = function(index){

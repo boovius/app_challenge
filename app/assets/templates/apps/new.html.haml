@@ -22,20 +22,20 @@
       %label.control-label.col-sm-2(for="stories") Pivotal/Trello
       .col-sm-10
         %input.form-control(type="url" name="stories" ng-model="app.stories")
-    %ngForm(ng-repeat="feature in app.features" ng-model="feature")
-      %div {{$index + 1}}
-      .form-group
-        %label.control-label.col-sm-2(for="feature-title") Feature Title
-        .col-sm-10
-          %input.form-control(type="text" name="feature-title" ng-model="feature.title")
-      .form-group
-        %label.control-label.col-sm-2(for="feature-points") Feature Points
-        .col-sm-10
-          %input.form-control(type="text" name="feature-points" ng-model="points")
+      %ngForm(name="appFeaturesForm" ng-repeat="feature in app.features")
+        %div {{$index + 1}}
+        .form-group
+          %label.control-label.col-sm-2(for="feature-title") Feature Title
+          .col-sm-10
+            %input.form-control(type="text" name="feature-title" ng-model="app.features[$index].title")
+        .form-group
+          %label.control-label.col-sm-2(for="feature-points") Feature Points
+          .col-sm-10
+            %input.form-control(type="number" name="feature-points" ng-model="app.features[$index].points")
+        .row
+          %input.btn.btn-danger.pull-right.controls(ng-click="deleteFeature($index)" value="Delete Feature")
       .row
-        %input.btn.btn-danger.pull-right.controls(ng-click="deleteFeature($index)" value="Delete Feature")
-    .row
-      %input.btn.btn-primary(ng-click="addNewFeature()" value="Add New Feature")
+        %input.btn.btn-primary(ng-click="addNewFeature()" value="Add Feature")
     .row
       %input.input-lg.btn.btn-success.pull-right.controls(type="submit" value="Create New App!")
 
