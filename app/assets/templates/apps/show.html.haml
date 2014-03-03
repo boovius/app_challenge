@@ -2,10 +2,11 @@
   .row-fluid
     .span-12
       %h1 {{app.title}}
-      %h3 {{app.user.name}}
+      %h3
+        Developed by {{app.user.name}}
       %p {{app.summary}}
       %ul.links
-        %li(ng-repeat="link in app.links" ng-if="link.url ==''")
-          %a(href="{{link.url}}") {{link.title}}
+        %li(ng-repeat="link in app.links" ng-if="link.href != null")
+          %a(href="{{link.href}}") {{link.title}}
       %smart-table.table.table-striped(config="dataTableConfig" columns="showAppTableColumns" rows="showAppTableRowData")
 

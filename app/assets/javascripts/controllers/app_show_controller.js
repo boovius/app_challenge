@@ -1,6 +1,4 @@
 AppChallenge.controller('AppShowController', ['$scope', 'app', function($scope, app) {
-  console.log(app)
-
   $scope.app = app.app
 
   $scope.dataTableConfig = {
@@ -14,6 +12,6 @@ AppChallenge.controller('AppShowController', ['$scope', 'app', function($scope, 
         {label: 'Completed', map:'done'}
   ]
 
-  $scope.showAppTableRowData = app.app.features
+  $scope.showAppTableRowData = $scope.app.features
 
 }])

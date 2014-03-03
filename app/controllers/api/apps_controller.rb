@@ -5,6 +5,20 @@ class Api::AppsController < ApplicationController
 
   def show
     @app = App.find(params[:id])
+    @links = [
+      {
+        title: "GitHub",
+        href: @app.repo
+      },
+      {
+        title: "Production",
+        href: @app.url
+      },
+      {
+        title: "Stories",
+        href: @app.stories
+      }
+    ]
   end
 
   def create
