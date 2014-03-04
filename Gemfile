@@ -21,6 +21,8 @@ group :assets do
   gem 'uglifier', '>= 1.3.0'
 end
 
+gem 'rails_12factor', group: :production
+
 # Use CoffeeScript for .js.coffee assets and views
 # gem 'coffee-rails', '~> 4.0.0'
 
