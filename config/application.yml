@@ -1,11 +1,11 @@
 defaults: &defaults
+
+development: &development
+  <<: *defaults
   app_url: http://localhost:3000
   github:
     key: '50d1cad7d4133c856cf9'
     secret: '85fe02c5e7652ee1d05248db764ae569733bc39a'
-
-development: &development
-  <<: *defaults
 
 test:
   <<: *development
@@ -20,4 +20,7 @@ s1:
 
 production:
   <<: *defaults
-  app_url:
+  app_url: http://goon-squad.herokuapp.com
+  github:
+    key: '4b67c567adaacb4aedc5'
+    secret: 'a9ac86c8b015ab48b2cce487074a537a1422d8c0'
