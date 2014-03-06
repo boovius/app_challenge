@@ -11,14 +11,12 @@
         Goon Squad App Challenge
       %ul.nav.navbar-nav.navbar-right
         %li.dropdown
-          %a.dropdown-toggle(href="#" data-toggle="dropdown")
-            #{current_user.name}'s portal
-          %ul.dropdown-menu
-            %li
-              %a(href="#")Profile
-            %li.divider
-            %li
-              %a(href="/apps/new")Create App
+          -if current_user.present?
+            %a.dropdown-toggle(href="#" data-toggle="dropdown")
+              #{current_user.name}'s portal
+            %ul.dropdown-menu
+              %li
+                %a(href="/apps/new")Create App
     = yield
     #footer
     = javascript_include_tag "application"
