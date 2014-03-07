@@ -13,11 +13,11 @@ AppChallenge.config(['$routeProvider', '$locationProvider', 'assetPathProvider',
     }
   })
   .when('/apps/new', {
-    templateUrl: ('../assets/apps/new.html'),
+    templateUrl: assetPathProvider.get('apps/new.html'),
     controller: 'AppCreateController'
   })
   .when('/apps/:id', {
-    templateUrl: ('../assets/apps/show.html'),
+    templateUrl: assetPathProvider.get('apps/show.html'),
     controller: "AppShowController",
     resolve: {
       app: ['AppService', '$route', function(AppService, $route){
