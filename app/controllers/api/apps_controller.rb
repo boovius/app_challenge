@@ -22,8 +22,6 @@ class Api::AppsController < ApplicationController
   end
 
   def create
-    ap params
-
     app = App.new(app_params)
     app.features.build params[:features]
 
