@@ -1,10 +1,10 @@
-AppChallenge.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+AppChallenge.config(['$routeProvider', '$locationProvider', 'assetPathProvider', function($routeProvider, $locationProvider, assetPathProvider) {
 
   $locationProvider.html5Mode(true)
 
   $routeProvider
   .when('/', {
-    templateUrl: ('../assets/home/home.html'),
+    templateUrl: assetPathProvider.get('home/home.html'),
     controller: 'HomeController',
     resolve: {
       currentApps: ['AppService', function(AppService) {
