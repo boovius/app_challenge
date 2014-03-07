@@ -13,4 +13,6 @@
 //= require ../../../vendor/assets/javascripts
 //= require initialize
 //= require_tree .
+//= require_tree ../templates
+
 

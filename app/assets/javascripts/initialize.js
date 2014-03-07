@@ -8,7 +8,8 @@ AppChallenge = angular.module('AppChallenge', [
   'ngRoute',
   'ngResource',
   'smartTable.table',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'templates'
 ])
 
 .config(['$httpProvider', '$routeProvider', '$locationProvider', function($httpProvider, $routeProvider, $locationProvider) {

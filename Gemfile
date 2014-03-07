@@ -7,6 +7,7 @@ gem 'pg' # Postgres SQL DB
 gem 'jbuilder'
 gem 'gon'
 gem 'haml-rails'
+gem 'angular-rails-templates'
 
 gem 'omniauth-github'
 
