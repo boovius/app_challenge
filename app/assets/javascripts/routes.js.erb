@@ -13,7 +13,7 @@ AppChallenge.config(['$routeProvider', '$locationProvider', 'assetPathProvider',
     }
   })
   .when('/apps/new', {
-    templateUrl: '<%= asset_path('/apps/new.html') %>',
+    templateUrl: '<%= asset_path('apps/new.html') %>',
     controller: 'AppCreateController'
   })
   .when('/apps/:id', {
