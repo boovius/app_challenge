@@ -1,11 +1,9 @@
-AppChallenge.controller('AppEditController', ['$scope', 'app', 'AppService', function($scope, app, AppService) {
+AppChallenge.controller('AppEditController', ['$scope', 'app', 'AppService', '$window', function($scope, app, AppService, $window) {
 
   $scope.app = app.app
   $scope.app.repo    = $scope.app.links[0].href
   $scope.app.url     = $scope.app.links[1].href
   $scope.app.stories = $scope.app.links[2].href
-
-  console.log($scope.app)
 
   $scope.addNewFeature = function(){
     $scope.app.features.push({})
@@ -16,6 +14,11 @@ AppChallenge.controller('AppEditController', ['$scope', 'app', 'AppService', fun
   }
 
   $scope.updateApp = function(){
-    AppService.app.update(angular.snakeize($scope.app))
+    AppService.app.update(angular.snakeize($scope.app), function(updatedApp){
+      $window.location.href = '/apps/' + updatedApp.id
+    }, function(errorData){
+      alert('You do not have priveledges to update this app asswipe')
+      $window.location.href = '/'
+    })
   }
 }])

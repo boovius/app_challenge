@@ -1,4 +1,4 @@
-AppChallenge.controller('AppCreateController', ['$scope', 'AppService', function($scope, AppService) {
+AppChallenge.controller('AppCreateController', ['$scope', 'AppService', '$window', function($scope, AppService, $window) {
 
   $scope.app = {
     title: gon.currentUser.name + "'s new app",
@@ -15,6 +15,10 @@ AppChallenge.controller('AppCreateController', ['$scope', 'AppService', function
   }
 
   $scope.createApp = function(){
-    AppService.apps.save(angular.snakeize($scope.app))
+    AppService.apps.save(angular.snakeize($scope.app), function(newApp){
+      $window.location.href = '/apps/' + newApp.id
+    }, function(){
+      alert('Sorry, there was an error creating your app')
+    })
   }
 }])
