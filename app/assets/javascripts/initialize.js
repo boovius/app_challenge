@@ -15,23 +15,6 @@ AppChallenge = angular.module('AppChallenge', [
 
 }])
 
-AppChallenge.provider('assetPath', [function() {
-  console.log(gon)
-  this.get = function(path) {
-    if(angular.isDefined(gon.config.manifest)) {
-      return '/assets/' + gon.config.manifest[path]
-    } else {
-      return '/assets/' + path
-    }
-  }
-
-  this.$get = function() {
-    return {
-      get: this.get
-    }
-  }
-}]);
-
 // Repurposed function to convert camelCase to snake_case
 // https://github.com/nathan7/snakeize
 angular.snakeize = function(obj) {

@@ -1,4 +1,4 @@
-AppChallenge.controller('AppShowController', ['$scope', 'app', function($scope, app) {
+AppChallenge.controller('AppShowController', ['$scope', 'app', '$routeParams', function($scope, app, $routeParams) {
   $scope.app = app.app
 
   $scope.dataTableConfig = {

@@ -1,4 +1,4 @@
-AppChallenge.config(['$routeProvider', '$locationProvider', 'assetPathProvider', function($routeProvider, $locationProvider, assetPathProvider) {
+AppChallenge.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
 
   $locationProvider.html5Mode(true)
 
@@ -7,8 +7,14 @@ AppChallenge.config(['$routeProvider', '$locationProvider', 'assetPathProvider',
     templateUrl: '<%= asset_path('home/home.html') %>',
     controller: 'HomeController',
     resolve: {
-      currentApps: ['AppService', function(AppService) {
-        return AppService.current.query()
+      currentApps: ['AppService', '$q', function(AppService, $q) {
+        var deferred = $q.defer();
+        AppService.current.query(function(successData){
+          deferred.resolve(successData);
+        }, function(errorData){
+          deferred.reject();
+        })
+        return deferred.promise;
       }]
     }
   })
@@ -20,8 +26,14 @@ AppChallenge.config(['$routeProvider', '$locationProvider', 'assetPathProvider',
     templateUrl: '<%= asset_path('apps/show.html') %>',
     controller: "AppShowController",
     resolve: {
-      app: ['AppService', '$route', function(AppService, $route){
-        return AppService.show.get({id: $route.current.params.id});
+      app: ['AppService', '$route', '$q', function(AppService, $route, $q){
+        var deferred = $q.defer()
+        AppService.show.get({id: $route.current.params.id}, function(successData){
+          deferred.resolve(successData);
+        }, function(errorData){
+          deferred.reject();
+        });
+        return deferred.promise;
       }]
     }
   })
