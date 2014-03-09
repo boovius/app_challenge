@@ -31,7 +31,7 @@ AppChallenge.config(['$routeProvider', '$locationProvider', function($routeProvi
     resolve: {
       app: ['AppService', '$route', '$q', function(AppService, $route, $q){
         var deferred = $q.defer()
-        AppService.show.get({id: $route.current.params.id}, function(successData){
+        AppService.app.get({id: $route.current.params.id}, function(successData){
           deferred.resolve(successData);
         }, function(errorData){
           deferred.reject();
@@ -46,7 +46,7 @@ AppChallenge.config(['$routeProvider', '$locationProvider', function($routeProvi
     resolve: {
       app: ['AppService', '$route', '$q', function(AppService, $route, $q){
         var deferred = $q.defer()
-        AppService.show.get({id: $route.current.params.id}, function(successData){
+        AppService.app.get({id: $route.current.params.id}, function(successData){
           deferred.resolve(successData);
         }, function(errorData){
           deferred.reject();

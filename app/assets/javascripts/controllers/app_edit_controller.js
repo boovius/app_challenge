@@ -15,7 +15,7 @@ AppChallenge.controller('AppEditController', ['$scope', 'app', 'AppService', fun
     $scope.app.features.splice(index)
   }
 
-  $scope.createApp = function(){
-    AppService.apps.save(angular.snakeize($scope.app))
+  $scope.updateApp = function(){
+    AppService.app.update(angular.snakeize($scope.app))
   }
 }])
