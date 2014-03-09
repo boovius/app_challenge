@@ -1,0 +1,42 @@
+#app-new.container
+  %h3 Heyya Goons! Looking to edit your App?
+  %h4 Well... you've come to the right place - update your app's info below!
+  %form.form-horizontal(name="appForm" role="form" ng-model="app" ng-submit="createApp()")
+    .form-group
+      %label.control-label.col-sm-2(for="title") Title
+      .col-sm-10
+        %input.form-control(type="text" name="title" ng-model="app.title" placeholder="app title" required)
+    .form-group
+      %label.control-label.col-sm-2(for="repo") Repository
+      .col-sm-10
+        %input.form-control(type="url" name="repo" ng-model="app.repo" placeholder= "http://www.github.com/yourrepo" required)
+    .form-group
+      %label.control-label.col-sm-2(for="summary") Summary
+      .col-sm-10
+        %textarea.form-control(name="summary" ng-model="app.summary" maxlength="240" cols="20")
+    .form-group
+      %label.control-label.col-sm-2(for="url") Production Link
+      .col-sm-10
+        %input.form-control(type="url" name="url" ng-model="app.url")
+    .form-group
+      %label.control-label.col-sm-2(for="stories") Pivotal/Trello
+      .col-sm-10
+        %input.form-control(type="url" name="stories" ng-model="app.stories")
+    %ngForm.row(name="appFeaturesForm" ng-repeat="feature in app.features")
+      %span Feature # {{$index + 1}}
+      .form-group
+        %label.control-label.col-sm-2(for="feature-title") Feature Title
+        .col-sm-10
+          %input.form-control(type="text" name="feature-title" ng-model="app.features[$index].title")
+      .form-group
+        %label.control-label.col-sm-2(for="feature-points") Feature Points
+        .col-sm-10
+          %input.form-control(type="number" name="feature-points" ng-model="app.features[$index].points")
+      .row
+        %input.btn.btn-danger.pull-right.controls(ng-click="deleteFeature($index)" value="Delete Feature")
+    .row
+      %input.btn.btn-primary(ng-click="addNewFeature()" value="Add Feature")
+    .row
+      %input.input-lg.btn.btn-success.pull-right.controls(type="submit" value="Update Your App!")
+
+

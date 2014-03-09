@@ -1,5 +1,6 @@
 AppChallenge.controller('AppShowController', ['$scope', 'app', '$routeParams', function($scope, app, $routeParams) {
   $scope.app = app.app
+  $scope.currentUser = gon.currentUser
 
   $scope.dataTableConfig = {
     itemsByPage: 50,

@@ -25,6 +25,21 @@ AppChallenge.config(['$routeProvider', '$locationProvider', function($routeProvi
     templateUrl: '<%= asset_path('apps/new.html') %>',
     controller: 'AppCreateController'
   })
+  .when('/apps/:id/edit', {
+    templateUrl: '<%= asset_path('apps/edit.html') %>',
+    controller: "AppEditController",
+    resolve: {
+      app: ['AppService', '$route', '$q', function(AppService, $route, $q){
+        var deferred = $q.defer()
+        AppService.show.get({id: $route.current.params.id}, function(successData){
+          deferred.resolve(successData);
+        }, function(errorData){
+          deferred.reject();
+        });
+        return deferred.promise;
+      }]
+    }
+  })
   .when('/apps/:id', {
     templateUrl: '<%= asset_path('apps/show.html') %>',
     controller: "AppShowController",

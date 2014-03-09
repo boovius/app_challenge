@@ -1,7 +1,10 @@
 #show-app.container
   .row-fluid
     .span-12
-      %h1 {{app.title}}
+      %h1
+        {{app.title}}
+        %a.btn.btn-primary(ng-if="currentUser.id == app.user.id" href='/apps/{{app.id}}/edit')
+          Edit!
       %h3
         Developed by {{app.user.name}}
       %p {{app.summary}}
