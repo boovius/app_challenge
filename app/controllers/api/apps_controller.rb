@@ -33,6 +33,12 @@ class Api::AppsController < ApplicationController
   end
 
   def update
+    # Ensure current user is creator of app
+    unless current_user.id == params[:user][:id]
+      render json: {type: 'error', messages: 'Unauthorized PUT attempt asshole!'}, status: :unprocessable_entity
+      return
+    end
+
     app = App.find(params[:app][:id])
 
     app.update_attributes(app_params)
