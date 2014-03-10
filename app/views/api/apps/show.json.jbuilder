@@ -11,6 +11,7 @@ json.app do |app|
     json.href          link[:href]
   end
   json.features @app.features do |feature|
+    json.id          feature.id
     json.title       feature.title
     json.points      feature.points
     json.done        feature.done

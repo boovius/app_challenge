@@ -6,6 +6,9 @@ AppChallenge::Application.routes.draw do
       get "/:id",      action: 'show'
       put "/:id",      action: 'update'
     end
+    namespace :features do
+      put "/:id",      action: 'update'
+    end
   end
 
   get '/new' => 'users#new', :as => :signin
