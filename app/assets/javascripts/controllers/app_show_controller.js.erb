@@ -1,5 +1,6 @@
 AppChallenge.controller('AppShowController', ['$scope', 'app', '$routeParams', function($scope, app, $routeParams) {
-  //= depend_on_asset 'cell_templates/checkbox.html'
+  //= depend_on_asset "cell_templates/checkbox.html"
+
   $scope.app = app.app
   $scope.currentUser = gon.currentUser
 
@@ -11,7 +12,7 @@ AppChallenge.controller('AppShowController', ['$scope', 'app', '$routeParams', f
   $scope.showAppTableColumns = [
         {label: 'Feature', map: 'title'},
         {label: 'Points', map:'points'},
-        {label: 'Completed', map:'done', cellTemplateUrl: '<%= asset_path('cell_templates/checkbox.html') %>'}
+        {label: 'Completed', map:'done', cellTemplateUrl: '<%= asset_path("cell_templates/checkbox.html") %>'}
   ]
 
   $scope.showAppTableRowData = $scope.app.features

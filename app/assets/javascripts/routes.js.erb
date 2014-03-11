@@ -1,14 +1,14 @@
 AppChallenge.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
-//= depend_on_asset 'home/home.html'
-//= depend_on_asset 'apps/new.html'
-//= depend_on_asset 'apps/show.html'
-//= depend_on_asset 'apps/edit.html'
+//= depend_on_asset "home/home.html"
+//= depend_on_asset "apps/new.html"
+//= depend_on_asset "apps/show.html"
+//= depend_on_asset "apps/edit.html"
 
   $locationProvider.html5Mode(true)
 
   $routeProvider
   .when('/', {
-    templateUrl: '<%= asset_path('home/home.html') %>',
+    templateUrl: '<%= asset_path("home/home.html") %>',
     controller: 'HomeController',
     resolve: {
       currentApps: ['AppService', '$q', function(AppService, $q) {
@@ -23,7 +23,7 @@ AppChallenge.config(['$routeProvider', '$locationProvider', function($routeProvi
     }
   })
   .when('/apps/new', {
-    templateUrl: '<%= asset_path('apps/new.html') %>',
+    templateUrl: '<%= asset_path("apps/new.html") %>',
     controller: 'AppCreateController'
   })
   .when('/apps/:id/edit', {
@@ -42,7 +42,7 @@ AppChallenge.config(['$routeProvider', '$locationProvider', function($routeProvi
     }
   })
   .when('/apps/:id', {
-    templateUrl: '<%= asset_path('apps/show.html') %>',
+    templateUrl: '<%= asset_path("apps/show.html") %>',
     controller: "AppShowController",
     resolve: {
       app: ['AppService', '$route', '$q', function(AppService, $route, $q){
