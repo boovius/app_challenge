@@ -1,3 +1,15 @@
-.range_and_value {
-  display: inline-block;
+.range-and-value{
+  input[type='range'] {
+    width: 60%;
+    float: left;
+  }
+
+  span {
+    display: block;
+    float: left;
+    margin-left: 3em;
+    line-height: 2.25em;
+    font-weight: bold;
+  }
 }
+
