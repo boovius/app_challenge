@@ -30,8 +30,9 @@
           %input.form-control(type="text" name="feature-title" ng-model="app.features[$index].title")
       .form-group
         %label.control-label.col-sm-2(for="feature-points") Feature Points
-        .col-sm-10
-          %input.form-control(type="number" name="feature-points" ng-model="app.features[$index].points")
+        .col-sm-10.range-and-value
+          %input.form-control(type="range" min="0" max="5" name="feature-points" ng-model="app.features[$index].points")
+          %span.value {{app.features[$index].points}}
       .row
         %input.btn.btn-danger.pull-right.controls(ng-click="deleteFeature($index)" value="Delete Feature")
     .row
