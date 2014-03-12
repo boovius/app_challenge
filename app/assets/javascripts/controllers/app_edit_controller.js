@@ -17,6 +17,7 @@ AppChallenge.controller('AppEditController', ['$scope', 'app', 'AppService', '$w
     AppService.app.update(angular.snakeize($scope.app), function(updatedApp){
       $window.location.href = '/apps/' + updatedApp.id
     }, function(errorData){
+      console.log(errorData.messages)
       alert('You do not have priveledges to update this app asswipe')
       $window.location.href = '/'
     })
